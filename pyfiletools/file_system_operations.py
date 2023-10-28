@@ -48,7 +48,7 @@ def navigate_directories(base_dir=None):
 
         # Handle modify actions (create or remove directories)
         elif action_plan.lower() in ['modify', 'mod']:
-            action = input(f"Enter an action {commands}")
+            action = input(f"Enter an action {commands} ")
             action_parts = action.split(' ')
 
             # Check for the proper format for modify actions

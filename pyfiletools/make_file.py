@@ -1,7 +1,7 @@
 import os
 
 def create_file(file_name):
-    valid_extensions = [".txt", ".docx", ".doc", ".odt", ".rtf", ".pdf", ".pptx", ".ppt",".py", ".js", ".html", ".css", ".cpp", ".java",]  # Add more valid extensions as needed
+    valid_extensions = [".txt", ".docx", ".doc", ".md", ".odt", ".rtf", ".pdf", ".pptx", ".ppt",".py", ".js", ".html", ".css", ".cpp", ".java",]  # Add more valid extensions as needed
     extension = os.path.splitext(file_name)[1]
     
     if extension not in valid_extensions:
