@@ -1,5 +1,5 @@
 import os
-import query_name, find_directory, find_files, make_directory, list_file_perms as lfp, change_directory, list_subdirectories, remove_directories, mod_files, make_file, list_files
+import query_name, find_directory, find_files, make_directory, list_file_perms as lfp, change_directory, list_subdirectories, remove_directories, mod_files, make_file, list_files, git_commands
 import getpass
 
 # Function to navigate directories
@@ -67,6 +67,8 @@ def navigate_directories(base_dir=None):
                 mod_files.copy_file(os.getcwd())
             elif action_parts[0].lower().startswith('dfile'):
                 mod_files.delete_file(os.getcwd())
+            elif action_parts[0].lower().startswith('git'):
+                print(f'Commands are not ready to be used.')
             
             elif action_parts[0].lower() in ['mkfile', 'touch']:
                 new_file_name = input("Enter the name of the file with a valid extension (e.g., .txt, .py, .csv): ")
@@ -74,7 +76,7 @@ def navigate_directories(base_dir=None):
                 print('====================')
 
             else:
-                print(f"Invalid input. Please use {commands}")
+                print(f"Invalid input. Please use {commands}: ")
                 print('====================')
 
         # List subdirectories in the current directory
@@ -123,7 +125,7 @@ def navigate_directories(base_dir=None):
 
 if __name__ == "__main__":
 
-    commands = ["Navigation: 'searchd', 'searchf' , 'cd [file]', 'ls', 'ls-a', 'lsdir', 'listdir', 'lsd', 'cwd' ", "Modify: 'Mod', 'Modify'// 'mkdir', 'mkfile', 'mfile'", "Quit // 'quit', 'exit'"  ]
+    commands = ["Navigation: 'searchd', 'searchf' , 'cd [file]', 'ls', 'ls-a', 'lsdir', 'listdir', 'lsd', 'cwd' ", "Modify: 'Mod', 'Modify'// 'mkdir', 'mkfile', 'mfile'", "Quit // 'quit', 'exit'", "Git Commands: 'git'"]
     # Get the user's name and then navigate directories
     query_name.return_name(input('What is your name?: '))
     navigate_directories()

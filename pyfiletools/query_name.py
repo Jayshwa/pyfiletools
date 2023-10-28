@@ -7,4 +7,5 @@ def return_name(name):
         return_name(input('What is your name?: '))
     else:
         print(f'Hello {name}')
+        print(f'You are currently working in: {os.getcwd()}')
         print('====================')
