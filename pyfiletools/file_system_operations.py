@@ -8,6 +8,7 @@ def navigate_directories(base_dir=None):
     Navigate directories based on user input and perform search or modify actions.
 
     :param base_dir: The base directory to start searching from (default is the current working directory).
+    :type base_dir: str
     """
     if base_dir is None:
         base_dir = os.getcwd()
@@ -44,7 +45,7 @@ def navigate_directories(base_dir=None):
             directory_path = find_files.find_files(check_file, user_path)
 
             if directory_path:
-                print(f'{check_directory} was found at path: {directory_path}')
+                print(f'{check_file} was found at path: {directory_path}') #Corrected Variable
 
         # Handle modify actions (create or remove directories)
         elif action_plan.lower() in ['modify', 'mod']:
@@ -69,7 +70,7 @@ def navigate_directories(base_dir=None):
                 mod_files.delete_file(os.getcwd())
             elif action_parts[0].lower().startswith('git'):
                 print(f'Commands are not ready to be used.')
-            
+
             elif action_parts[0].lower() in ['mkfile', 'touch']:
                 new_file_name = input("Enter the name of the file with a valid extension (e.g., .txt, .py, .csv): ")
                 make_file.create_file(new_file_name)
@@ -92,7 +93,6 @@ def navigate_directories(base_dir=None):
             files = [file for file in files if os.path.isfile(os.path.join(os.getcwd(), file))]
             for file in files:
                 lfp.list_file_permissions(file)
-            
 
         # Change the current working directory based on the provided directory path
         elif action_plan.lower().startswith('cd'):
@@ -108,7 +108,6 @@ def navigate_directories(base_dir=None):
         elif action_plan.lower() in ['quit', 'exit']:
             # If 'quit' or 'exit' is entered, terminate the program
             quit()
-
 
         # Display the current working directory
         elif action_plan.lower() == 'cwd':
