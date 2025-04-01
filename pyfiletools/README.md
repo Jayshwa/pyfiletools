@@ -1,4 +1,4 @@
-# pyfiletools
+# python_file_system_scripts
 
 Welcome to the pyfiletools project repository! This collection of Python scripts and tools is designed to solidify my understanding of the `os`, `shutil`, and `getpass` modules. These modules are essential for file system interaction, data manipulation, and secure user input in Python.
 
